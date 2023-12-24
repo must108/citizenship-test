@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizenship Practice</title>
+    <link rel="icon" href="/assets/icon.ico">
+    <link rel="stylesheet" href="src/citizen.css">
+</head>
+<body>
+    <div id="mainwrap">
+        <div id="main">
+            <h1 id="mainhead">citizenship quiz</h1>
+            <button id="mainbutton" onclick="StartGame()">play</button>
+        </div>
+    </div>
+
+    <div id="menuwrap">
+        <div id="infomenu">
+            <h1>welcome!</h1>
+            <p>
+                this test is designed to simulate the naturalization civics test.
+                you will answer 10 questions related to u.s. history and government.
+            </p>
+
+            <p>
+                while the original test completes when you answer 6 questions right, you
+                will answer all 10 in this quiz, to be better prepared for the test.
+            </p>
+            <p>
+                the answers for this quiz were last updated on 12/19/2023, and are based on
+                the UCF area.
+            </p>
+            <p id="weight1">good luck!</p>
+            <button id="realstart" onclick="startQuiz()">start</button>
+        </div>
+    </div>
+
+    <div id="quizcol">
+        <div id="quizwrapper">
+            <h1 id="question"></h1>
+            <form autocomplete="off">
+                <input type="text" id="input" placeholder="type your answer here!"><br>
+                <button id="q-button">submit</button>
+                <button id="q-button" type="button" onclick="Questioning()">skip</button>
+            </form>
+            <p id="status"></p>
+
+            <div id="pagination">
+                <div data-question="1" class="">1</div>
+                <div data-question="2" class="">2</div>
+                <div data-question="3" class="">3</div>
+                <div data-question="4" class="">4</div>
+                <div data-question="5" class="">5</div>
+                <div data-question="6" class="">6</div>
+                <div data-question="7" class="">7</div>
+                <div data-question="8" class="">8</div>
+                <div data-question="9" class="">9</div>
+                <div data-question="10" class="">10</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameend">
+        <div id="gameendbox">
+            <h1 id="endhead">you finished!</h1>
+
+            <p id="p-1"></p>
+            <p id="p-2"></p>
+
+            <button id="end-b-1" onclick="goAgain()">try again?</button>
+            <button id="end-b-2" onclick="startMenu()">to start</button>
+        </div>
+    </div>
+
+    <script src="src/citizen.js"></script>
+    <script src="src/animation.js"></script>
+</body>
+</html>
