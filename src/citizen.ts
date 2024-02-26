@@ -1,25 +1,3 @@
-const questDisplay = document.getElementById("question")!;
-const questInput = document.getElementById("input")! as HTMLInputElement;
-const stat1 = document.getElementById("status")!;
-const paginationItems = document.querySelectorAll('#pagination div')!;
-const endGameBox = document.getElementById("gameendbox")!;
-const gameEndElem = document.getElementById("gameend")!
-const quizElem = document.getElementById("quizcol")!;
-const quizWrapper = document.getElementById("quizwrapper")!;
-const main_wrap = document.getElementById("mainwrap")!;
-const menu_wrap = document.getElementById("menuwrap")!;
-const main_header = document.getElementById("mainhead")!;
-const p1 = document.getElementById("p-1")!;
-const p2 = document.getElementById("p-2")!;
-const main_button = document.getElementById("mainbutton")!;
-const OG_TransformMain = main_wrap.style.transform;
-const OG_TransformEnd = gameEndElem.style.transform;
-let getURL = 'http://localhost:3000/getting';
-let questionID: number;
-let questCounter = 0;
-let correctAns = 0;
-let questionArray: number[] = [];
-
 async function Questioning(){
     quizElem.style.opacity = '1';
     quizWrapper.style.opacity = '1';
@@ -238,4 +216,24 @@ document.addEventListener('questEvent', e => {
     Questioning();
 });
 
-
+const questDisplay = document.getElementById("question")!;
+const questInput = document.getElementById("input")! as HTMLInputElement;
+const stat1 = document.getElementById("status")!;
+const paginationItems = document.querySelectorAll('#pagination div')!;
+const endGameBox = document.getElementById("gameendbox")!;
+const gameEndElem = document.getElementById("gameend")!
+const quizElem = document.getElementById("quizcol")!;
+const quizWrapper = document.getElementById("quizwrapper")!;
+const main_wrap = document.getElementById("mainwrap")!;
+const menu_wrap = document.getElementById("menuwrap")!;
+const main_header = document.getElementById("mainhead")!;
+const p1 = document.getElementById("p-1")!;
+const p2 = document.getElementById("p-2")!;
+const main_button = document.getElementById("mainbutton")!;
+const OG_TransformMain = main_wrap.style.transform;
+const OG_TransformEnd = gameEndElem.style.transform;
+let getURL = 'http://localhost:3000/getting';
+let questionID: number;
+let questCounter = 0;
+let correctAns = 0;
+let questionArray: number[] = [];

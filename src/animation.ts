@@ -1,16 +1,5 @@
-const mainheader = document.getElementById("mainhead")!;
-const mainbutton = document.getElementById("mainbutton")!;
 const mainwrap = document.getElementById("mainwrap")!;
-const menuwrap = document.getElementById("menuwrap")!;
-const infomenu = document.getElementById("infomenu")!;
-const starting = document.getElementById("realstart")!;
-const quizWrap = document.getElementById("quizwrapper")!;
-const quiz_Elem = document.getElementById("quizcol")!;
-const game_EndElem = document.getElementById("gameend")!
-const questEvent = new Event('questEvent');
 const OGTransformMain = mainwrap.style.transform;
-const OGTransformMenu = menuwrap.style.transform;
-const OGTransformEnd = game_EndElem.style.transform;
 
 mainwrap.style.transform = OGTransformMain;
 setTimeout(() => {
@@ -66,3 +55,15 @@ function startQuiz(){
         document.dispatchEvent(questEvent);
     }, 1000);
 }
+
+const mainheader = document.getElementById("mainhead")!;
+const mainbutton = document.getElementById("mainbutton")!;
+const menuwrap = document.getElementById("menuwrap")!;
+const infomenu = document.getElementById("infomenu")!;
+const starting = document.getElementById("realstart")!;
+const quizWrap = document.getElementById("quizwrapper")!;
+const quiz_Elem = document.getElementById("quizcol")!;
+const game_EndElem = document.getElementById("gameend")!
+const questEvent = new Event('questEvent');
+const OGTransformMenu = menuwrap.style.transform;
+const OGTransformEnd = game_EndElem.style.transform;
