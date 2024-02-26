@@ -17,7 +17,7 @@ const connection = sql.createConnection({
     database: "YOUR_DB_HERE"
 });
 
-connection.connect((err) => {
+connection.connect((err: any) => {
     if(err){
         console.log("error connecting to mysql " + err.stack);
         return;
@@ -29,7 +29,7 @@ app.get('/getting', (req, res) => {
     const randQuestion = req.query.questionId;
 
     const sqlQuery = 'select * from questions where question_id = ?'
-    connection.query(sqlQuery, [randQuestion], (err, result) => {
+    connection.query(sqlQuery, [randQuestion], (err: any, result: any) => {
         if(err){
             console.error('error getting data from mysql' + err.stack);
             res.status(500).json({ error: 'Internal server error' });
@@ -44,7 +44,7 @@ app.get('/getans', (req, res) => {
     const quest = req.query.questionId;
 
     const sqlQuery = 'select * from answers where question_id = ?';
-    connection.query(sqlQuery, [quest], (err, result) => {
+    connection.query(sqlQuery, [quest], (err: any, result: any) => {
         if(err) {
             console.error('error getting data from mysql' + err.stack);
             res.status(500).json({ error: 'Internal server error' });
