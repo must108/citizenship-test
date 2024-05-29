@@ -1,8 +1,8 @@
-import * as sql from 'mysql2';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { createClient } from '@supabase/supabase-js';
 
 const app = express();
 const port = 3000;
@@ -13,49 +13,50 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const connection = sql.createConnection({
-    host: process.env.MYSQL_HOSTNAME,
-    user: process.env.MYSQL_USERNAME,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DB_NAME
-});
+const supabaseUrl = process.env.SUPABASE_URL!;
+const supabaseKey = process.env.SUPABASE_KEY!;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-connection.connect((err: any) => {
-    if(err){
-        console.log("error connecting to mysql " + err.stack);
-        return;
-    }
-    console.log("connected to mysql as id " + connection.threadId);
-});
-
-app.get('/getting', (req, res) => {
+app.get('/getting', async (req, res) => {
     const randQuestion = req.query.questionId;
 
-    const sqlQuery = 'select * from questions where question_id = ?'
-    connection.query(sqlQuery, [randQuestion], (err: any, result: any) => {
-        if(err){
-            console.error('error getting data from mysql' + err.stack);
-            res.status(500).json({ error: 'Internal server error' });
-            return;
+    try {
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .eq('question_id', randQuestion?.toString());
+
+        if (error) {
+            throw error;
         }
-        console.log('question got!');
-        res.json(result);
-    });
+
+        console.log('answer got!');
+        res.json(data);
+    } catch (err: any) {
+        console.error('error getting data from supabase: ' + err.message);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 });
 
-app.get('/getans', (req, res) => {
+app.get('/getans', async (req, res) => {
     const quest = req.query.questionId;
 
-    const sqlQuery = 'select * from answers where question_id = ?';
-    connection.query(sqlQuery, [quest], (err: any, result: any) => {
-        if(err) {
-            console.error('error getting data from mysql' + err.stack);
-            res.status(500).json({ error: 'Internal server error' });
-            return;
+    try {
+        const { data, error } = await supabase 
+            .from('answers')
+            .select('*')
+            .eq('question_id', quest);
+
+        if (error) {
+            throw error;
         }
+
         console.log('answer got!');
-        res.json(result);
-    });
+        res.json(data);
+    } catch (err: any) {
+        console.error('error getting data from supabase: ', err.message);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 });
 
 app.listen(port, () => {
