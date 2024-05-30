@@ -3,6 +3,7 @@ body {
   background-color: #333333;
   color: white;
   font-family: "Inter", sans-serif;
+  font-weight: bold;
   overflow: hidden;
 }
 
