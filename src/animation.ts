@@ -28,6 +28,8 @@ function StartGame(){
     }, 2000);
 }
 
+window.StartGame = StartGame;
+
 function showMenu(){
     menuwrap.style.opacity = '1';
     setTimeout(() => {
@@ -55,6 +57,8 @@ function startQuiz(){
         document.dispatchEvent(questEvent);
     }, 1000);
 }
+
+window.startQuiz = startQuiz;
 
 const mainheader = document.getElementById("mainhead")!;
 const mainbutton = document.getElementById("mainbutton")!;

@@ -31,6 +31,8 @@ async function Questioning(){
     }
 }
 
+window.Questioning = Questioning;
+
 function pagChecking(num: number){
     paginationItems.forEach(item => {
         const itemNum = parseInt(item.getAttribute('data-question')!);
@@ -78,6 +80,8 @@ function startMenu(){
     }, 1000);
 }
 
+window.startMenu = startMenu;
+
 function checkAns(){
     let val = questInput.value;
     getAnswer(val.toLowerCase());
@@ -118,6 +122,8 @@ function goAgain(){
     correctAns = 0;
     Questioning();
 }
+
+window.goAgain = goAgain;
 
 async function getAnswer(answer: string){
     let counter = 0;
