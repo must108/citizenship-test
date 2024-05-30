@@ -8,7 +8,7 @@ async function Questioning(){
         } else {
             questionArray.push(random);
         }
-        getURL = `http://localhost:3000/getting?questionId=` + random;
+        getURL = `https://naturalization-server-b96e080c6f09.herokuapp.com/getting?questionId=` + random;
         questionID = random;
         let data = await fetchData(getURL);
         displayQuestion(data);
@@ -122,7 +122,7 @@ function goAgain(){
 async function getAnswer(answer: string){
     let counter = 0;
     try {
-        let url = `http://localhost:3000/getans?questionId=` + questionID;
+        let url = `https://naturalization-server-b96e080c6f09.herokuapp.com/getans?questionId=` + questionID;
 
         let data = await fetchData(url);
 
