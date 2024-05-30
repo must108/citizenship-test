@@ -25,6 +25,7 @@ function StartGame() {
         showMenu();
     }, 2000);
 }
+window.StartGame = StartGame;
 function showMenu() {
     menuwrap.style.opacity = '1';
     setTimeout(function () {
@@ -51,6 +52,7 @@ function startQuiz() {
         document.dispatchEvent(questEvent);
     }, 1000);
 }
+window.startQuiz = startQuiz;
 var mainheader = document.getElementById("mainhead");
 var mainbutton = document.getElementById("mainbutton");
 var menuwrap = document.getElementById("menuwrap");

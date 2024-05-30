@@ -53,7 +53,7 @@ function Questioning() {
                     else {
                         questionArray.push(random);
                     }
-                    getURL = "http://localhost:3000/getting?questionId=" + random;
+                    getURL = "https://naturalization-server-b96e080c6f09.herokuapp.com/getting?questionId=" + random;
                     questionID = random;
                     return [4 /*yield*/, fetchData(getURL)];
                 case 2:
@@ -85,6 +85,7 @@ function Questioning() {
         });
     });
 }
+window.Questioning = Questioning;
 function pagChecking(num) {
     paginationItems.forEach(function (item) {
         var itemNum = parseInt(item.getAttribute('data-question'));
@@ -126,6 +127,7 @@ function startMenu() {
         }, 1000);
     }, 1000);
 }
+window.startMenu = startMenu;
 function checkAns() {
     var val = questInput.value;
     getAnswer(val.toLowerCase());
@@ -164,6 +166,7 @@ function goAgain() {
     correctAns = 0;
     Questioning();
 }
+window.goAgain = goAgain;
 function getAnswer(answer) {
     return __awaiter(this, void 0, void 0, function () {
         var counter, url, data, i, err_2;
@@ -174,7 +177,7 @@ function getAnswer(answer) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    url = "http://localhost:3000/getans?questionId=" + questionID;
+                    url = "https://naturalization-server-b96e080c6f09.herokuapp.com/getans?questionId=" + questionID;
                     return [4 /*yield*/, fetchData(url)];
                 case 2:
                     data = _a.sent();
