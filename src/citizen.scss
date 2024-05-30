@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
 $blue: #7bafd4;
 $lightgray: #595959;
 $darkblue: #5598c7;
@@ -31,6 +32,12 @@ body {
     top: 0;
     left: 0;
     position: absolute;
+}
+
+@media (max-width: 768px) {
+    #p-2, #p-3 {
+        display: none;
+    }
 }
 
 #mainhead {
@@ -85,6 +92,7 @@ body {
 #question {
     opacity: 0;
     transition: 1s;
+    font-size: 3em;
 }
 
 #input {
@@ -98,6 +106,13 @@ body {
     text-align: center;
     font-family: inherit;
     outline: none;
+}
+
+@media (max-width: 768px) {
+    #input {
+        width: 15em;
+        font-size: 1em;
+    }
 }
 
 #input::placeholder {
@@ -163,19 +178,23 @@ body {
 }
 
 @media (max-width: 550px){
-    #mainhead {
-        font-size: 3em;
-    }
     #mainbutton {
         padding: 15px 25px;
-    }
-    #question {
-        margin-left: 3rem;
-        margin-right: 3rem;
     }
     #gameendbox {
         margin-left: 3rem;
         margin-right: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #mainhead {
+        font-size: 2em;
+    }
+    #question {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        font-size: 1.5em;
     }
 }
 
@@ -224,6 +243,7 @@ body {
     div.active {
         background-color: $blue;
     }
+    width: 100%;
 }
 
 #gameend {
