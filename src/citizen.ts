@@ -175,7 +175,7 @@ const fetchData = async (url: any) => {
 };
 
 function displayQuestion(data: any){
-    const question = (data[0].question).toLowerCase();
+    const question = (data[0].question);
     questDisplay.textContent = question;
     questDisplay.style.opacity = '1';
 }

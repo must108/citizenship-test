@@ -237,7 +237,7 @@ var fetchData = function (url) { return __awaiter(_this, void 0, void 0, functio
     });
 }); };
 function displayQuestion(data) {
-    var question = (data[0].question).toLowerCase();
+    var question = (data[0].question);
     questDisplay.textContent = question;
     questDisplay.style.opacity = '1';
 }
