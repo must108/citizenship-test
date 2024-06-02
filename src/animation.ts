@@ -9,6 +9,9 @@ setTimeout(() => {
         mainbutton.style.opacity = '1';
         mainbutton.style.transform = 'translateY(0px)';
     }, 1000);
+    setTimeout(() => {
+        builtBy.style.opacity = '1';
+    }, 1700);
 }, 1000);
 
 function StartGame(){
@@ -62,6 +65,7 @@ window.startQuiz = startQuiz;
 
 const mainheader = document.getElementById("mainhead")!;
 const mainbutton = document.getElementById("mainbutton")!;
+const builtBy = document.getElementById("built")!;
 const menuwrap = document.getElementById("menuwrap")!;
 const infomenu = document.getElementById("infomenu")!;
 const starting = document.getElementById("realstart")!;
