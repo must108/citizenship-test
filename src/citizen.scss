@@ -20,11 +20,18 @@ body {
     line-height: 1rem;
     color: #6e6e6e;
     margin-top: auto;
+    opacity: 0;
+    transition: 1.5s;
 }
 
 #builtLink {
+    text-decoration: none;
     &:visited {
         color: #6e6e6e;
+    }
+
+    &:hover {
+        text-decoration: underline;
     }
 }
   

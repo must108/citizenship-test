@@ -8,6 +8,9 @@ setTimeout(function () {
         mainbutton.style.opacity = '1';
         mainbutton.style.transform = 'translateY(0px)';
     }, 1000);
+    setTimeout(function () {
+        builtBy.style.opacity = '1';
+    }, 1700);
 }, 1000);
 function StartGame() {
     mainwrap.style.transform = 'translateY(70px)';
@@ -55,6 +58,7 @@ function startQuiz() {
 window.startQuiz = startQuiz;
 var mainheader = document.getElementById("mainhead");
 var mainbutton = document.getElementById("mainbutton");
+var builtBy = document.getElementById("built");
 var menuwrap = document.getElementById("menuwrap");
 var infomenu = document.getElementById("infomenu");
 var starting = document.getElementById("realstart");
