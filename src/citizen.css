@@ -6,6 +6,17 @@ body {
   overflow: hidden;
 }
 
+#built {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #6e6e6e;
+  margin-top: auto;
+}
+
+#builtLink:visited {
+  color: #6e6e6e;
+}
+
 #mainwrap {
   transform: translateY(0);
   transition: 0.5s;
