@@ -8,7 +8,7 @@ async function Questioning(){
         } else {
             questionArray.push(random);
         }
-        getURL = `https://naturalization-server-b96e080c6f09.herokuapp.com/getting?questionId=` + random;
+        getURL = `https://general-server-must-266f7a692d5d.herokuapp.com/api/getQuestion?questionId=` + random;
         questionID = random;
         let data = await fetchData(getURL);
         displayQuestion(data);
@@ -128,7 +128,7 @@ window.goAgain = goAgain;
 async function getAnswer(answer: string){
     let counter = 0;
     try {
-        let url = `https://naturalization-server-b96e080c6f09.herokuapp.com/getans?questionId=` + questionID;
+        let url = `https://general-server-must-266f7a692d5d.herokuapp.com/api/getAnswer?questionId=` + questionID;
 
         let data = await fetchData(url);
 
