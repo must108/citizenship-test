@@ -53,7 +53,7 @@ function Questioning() {
                     else {
                         questionArray.push(random);
                     }
-                    getURL = "https://naturalization-server-b96e080c6f09.herokuapp.com/getting?questionId=" + random;
+                    getURL = "https://general-server-must-266f7a692d5d.herokuapp.com/api/getQuestion?questionId=" + random;
                     questionID = random;
                     return [4 /*yield*/, fetchData(getURL)];
                 case 2:
@@ -177,7 +177,7 @@ function getAnswer(answer) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    url = "https://naturalization-server-b96e080c6f09.herokuapp.com/getans?questionId=" + questionID;
+                    url = "https://general-server-must-266f7a692d5d.herokuapp.com/api/getAnswer?questionId=" + questionID;
                     return [4 /*yield*/, fetchData(url)];
                 case 2:
                     data = _a.sent();
